@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Full Stack</title>
+    <script type="text/javascript" src="vendors/angular.min.js"></script>
+  <script type="text/javascript" src="scripts/client.js"></script>
+</head>
+<body ng-app="FoodApp">
+    <h1>Angular Full Stack</h1>
+<div ng-controller="FoodController as vm">
+        <input type= "text" name="Food"  ng-model="vm.food" placeholder = "Food" />
+        {{vm.food}}
+    </div>
+</body>
+</html>
