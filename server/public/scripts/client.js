@@ -42,6 +42,21 @@ app.controller('FoodController', ['$http', function ($http) {
                 console.log('error on /food GET', error);
             })
     }
+
+self.saveFood = function() {
+    console.log('button clicked')
+    $http({
+        method: 'PUT',
+        url: '/food'
+    })
+    .then(function (response) {
+        console.log(response);
+        getAllFoods();
+    })
+    .catch(function (error) {
+        console.log('error on /food GET', error)
+    });
+};
 }]);
 
 

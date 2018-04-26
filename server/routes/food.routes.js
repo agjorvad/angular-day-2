@@ -29,4 +29,16 @@ router.post('/', (req, res) =>{
     });
 });
 
+router.put('/', (req, res )=>{
+    Food.findByIdAndUpdate(req.params.foodId, req.body, {new: true})
+    .then((databaseResults) => {
+        //good things happened
+        res.send(databaseResults);
+    })
+    .catch((error) => {
+        console.log('error find', error);
+        res.sendStatus(500);
+    });
+});
+
 module.exports = router;

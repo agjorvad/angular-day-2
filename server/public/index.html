@@ -18,9 +18,9 @@
             <table>
                 <tbody>
                     <tr ng-repeat="food in vm.foodList">
-                      <td>{{ food.name }}</td>
-                      <td>{{ food.deliciousness_rating }}</td>
-                      <td>{{ food.is_hot }}</td>
+                      <td><input ng-model="food.name"></td>
+                      <td><input ng-model="food.deliciousness_rating"></td>
+                      <td><input ng-model="food.is_hot"></td>
                       <td><button ng-click="vm.deleteFood(food)">Delete</button></td>
                       <td><button ng-click="vm.saveFood(food)">Save</button></td>
                     </tr>
