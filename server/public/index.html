@@ -8,11 +8,23 @@
     <script type="text/javascript" src="vendors/angular.min.js"></script>
   <script type="text/javascript" src="scripts/client.js"></script>
 </head>
-<body ng-app="FoodApp">
+<body ng-app="FoodApp" ng-controller="FoodController as vm">
     <h1>Angular Full Stack</h1>
-<div ng-controller="FoodController as vm">
-        <input type= "text" name="Food"  ng-model="vm.food" placeholder = "Food" />
-        {{vm.food}}
-    </div>
+        <input type= "text"  ng-model="vm.newFood.name" placeholder = "Food" />
+        <input type= "number"  ng-model="vm.newFood.deliciousness_rating" placeholder = "Deliciousness Rating" />
+        <input type="text" ng-model="vm.newFood.is_hot" placeholder="Is Hot?"/>
+    <button ng-click="vm.createFood()" class="btn btn-primary">Submit</button>
+    <h3>Food List</h3>
+            <table>
+                <tbody>
+                    <tr ng-repeat="food in vm.foodList">
+                      <td>{{ food.name }}</td>
+                      <td>{{ food.deliciousness_rating }}</td>
+                      <td>{{ food.is_hot }}</td>
+                      <td><button ng-click="vm.deleteFood(food)">Delete</button></td>
+                      <td><button ng-click="vm.saveFood(food)">Save</button></td>
+                    </tr>
+                </tbody>
+            </table>
 </body>
 </html>
